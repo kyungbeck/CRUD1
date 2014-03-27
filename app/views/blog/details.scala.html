@@ -1,0 +1,15 @@
+@(postForm: Form[Post])
+@import helper.twitterBootstrap._
+
+@main("Post form") {
+	<h1>Post form</h1>
+	@helper.form(action = routes.Blog.save()) {
+		<fieldset>
+			<legend>Post (@postForm("title").valueOr("New"))</legend>
+			@helper.inputText(postForm("postNum"))
+			@helper.inputText(postForm("title"))
+			@helper.inputText(postForm("content"))
+		</fieldset>
+		<input type="submit" class="btn btn-primary">
+	}
+}

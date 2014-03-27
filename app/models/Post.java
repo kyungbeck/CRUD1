@@ -1,5 +1,6 @@
 package models;
 
+import play.data.validation.*; // for the @Constraints.Required
 import java.util.HashSet;
 import java.util.Set;
 
@@ -14,8 +15,10 @@ public class Post {
 		posts.add(new Post(4, "네번째 포스트", "네번째 포스트 내용"));
 		posts.add(new Post(5, "다섯번째 포스트", "다섯번째 포스트 내용"));
 	}
-
+	
+	@Constraints.Required
 	public int postNum;
+	@Constraints.Required
 	public String title;
 	public String content;
 
