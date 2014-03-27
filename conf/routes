@@ -3,7 +3,12 @@
 # ~~~~
 
 # Home page
-GET     /                           controllers.Application.index()
+#GET     /                           controllers.Application.index()
+GET	/			controllers.Blog.list()
+GET	/blog			controllers.Blog.list()
+GET	/blog/new		controllers.Blog.newPost()
+GET	/blog/:postNum		controllers.Blog.details(postNum: Integer)
+POST	/blog			controllers.Blog.save()
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
